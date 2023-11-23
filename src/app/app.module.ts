@@ -36,6 +36,9 @@ import { VerifyCodeComponent } from './components/authentication/verify-code/ver
 import { ResetPasswordComponent } from './components/authentication/reset-password/reset-password.component';
 import { OurTeamComponent } from './components/our-team/our-team.component';
 import { TeamCardComponent } from './components/shared/card/team-card/team-card.component';
+import { PopupCardsComponent } from './components/shared/card/popup-cards/popup-cards.component';
+import { DealOfTheDayComponent } from './components/shared/card/popup-cards/deal-of-the-day/deal-of-the-day.component';
+import { HeadingSectionComponent } from './components/shared/heading-section/heading-section.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +73,10 @@ import { TeamCardComponent } from './components/shared/card/team-card/team-card.
     VerifyCodeComponent,
     ResetPasswordComponent,
     OurTeamComponent,
-    TeamCardComponent
+    TeamCardComponent,
+    PopupCardsComponent,
+    DealOfTheDayComponent,
+    HeadingSectionComponent
   ],
   imports: [
     BrowserModule,
