@@ -39,6 +39,14 @@ import { TeamCardComponent } from './components/shared/card/team-card/team-card.
 import { PopupCardsComponent } from './components/shared/card/popup-cards/popup-cards.component';
 import { DealOfTheDayComponent } from './components/shared/card/popup-cards/deal-of-the-day/deal-of-the-day.component';
 import { HeadingSectionComponent } from './components/shared/heading-section/heading-section.component';
+import { LoginStatusComponent } from './components/shared/product-billing-components/login-status/login-status.component';
+import { ProductBillingDetailsComponent } from './components/shared/product-billing-components/product-billing-details/product-billing-details.component';
+import { ProductBillCardComponent } from './components/shared/product-billing-components/product-bill-card/product-bill-card.component';
+import { ProductCartTableComponent } from './components/shared/card/product-cart-table/product-cart-table.component';
+import { ProductDetailsImageCardComponent } from './components/shared/card/product/product-details-image-card/product-details-image-card.component';
+import { UserDashboardComponent } from './components/dashboard/user-dashboard/user-dashboard.component';
+import { AdminDashboardComponent } from './components/dashboard/admin-dashboard/admin-dashboard.component';
+import { PhotoGalleryComponent } from './components/photo-gallery/photo-gallery.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +84,16 @@ import { HeadingSectionComponent } from './components/shared/heading-section/hea
     TeamCardComponent,
     PopupCardsComponent,
     DealOfTheDayComponent,
-    HeadingSectionComponent
+    HeadingSectionComponent,
+    LoginStatusComponent,
+    ProductBillingDetailsComponent,
+    ProductBillCardComponent,
+    ProductCartTableComponent,
+    ProductDetailsImageCardComponent,
+    UserDashboardComponent,
+    AdminDashboardComponent,
+    PhotoGalleryComponent,
+
   ],
   imports: [
     BrowserModule,

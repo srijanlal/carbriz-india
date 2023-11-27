@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ProductsService } from 'src/app/services/product-services/products.service';
+import { ProductService } from 'src/app/services/product-services/products.service';
 
 @Component({
   selector: 'app-product-list',
@@ -14,7 +14,7 @@ export class ProductListComponent {
   isLoading: boolean = true;
 
   constructor(
-    private productService: ProductsService
+    private productService: ProductService
   ) {}
 
   ngOnInit(): void {

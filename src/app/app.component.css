@@ -1,10 +1,15 @@
-.router-outlet{
+.router-outlet {
     padding-top: 65px;
     min-height: 80vh;
 }
 
-@media (max-width:767px) {
-    .router-outlet{
+@media (max-width: 767px) {
+    .router-outlet {
         min-height: 75vh;
     }
 }
+
+.content{
+    min-height: 90vh;
+}
+

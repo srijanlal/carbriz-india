@@ -7,4 +7,23 @@ import { Component } from '@angular/core';
 })
 export class CartComponent {
 
+
+  cart: any=[
+    {
+      cartItemTitle : 'Coating',
+      cartItemPrice: '424',
+      cartItemImageUrl: '../../../assets/images/6.png'
+    },
+    {
+      cartItemTitle : 'Coating',
+      cartItemPrice: '424',
+      cartItemImageUrl: '../../../assets/images/5.png'
+    },
+    {
+      cartItemTitle : 'Coating',
+      cartItemPrice: '424',
+      cartItemImageUrl: '../../../assets/images/7.png'
+    }
+  ]
+
 }

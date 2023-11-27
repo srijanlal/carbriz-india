@@ -18,7 +18,7 @@ export class OurTeamComponent {
     }
    team2 : any = {
       teamName: 'Sristhi',
-      teamProfile:'Software Developer',
+      teamProfile:'Graphics Designer',
       teamImage:'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/helene-engels.png',
       facebook:'https://www.facebook.com/srijan.lal',
       instagram:'https://www.facebook.com/srijan.lal',

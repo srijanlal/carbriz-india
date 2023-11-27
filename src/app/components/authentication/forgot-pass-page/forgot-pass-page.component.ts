@@ -14,8 +14,6 @@ import { ForgotPasswordService } from 'src/app/services/login-services/forgot-pa
 
 export class ForgotPassPageComponent {
   userCredential:string=''
-  email:string=''
-  username:string =''
   isMailSent: boolean = false;
   mailSentMsg: string = '';
   mailNotSentMsg: string = '';
@@ -27,19 +25,11 @@ export class ForgotPassPageComponent {
   ) {}
 
   sendVerificationCode() {
-    
-    console.log(this.userCredential)
-    if(this.username){
-      this.customerData.userCredential = this.username
-      this.userCredential= this.username;
-    }else if(this.email){
-      this.customerData.userCredential = this.email
-      this.userCredential= this.email;
-    }else{
-      console.log("Enter any value! Either username or email.")
+    if(!this.userCredential){
+      console.log("Enter any Value : ", this.userCredential)
       return;
-    }
-    console.log(this.userCredential)
+    }else{
+      this.customerData.userCredential= this.userCredential
     this.forgotPasswordService.sendVerificationCode(this.userCredential).subscribe(
       (response) => {
         this.isMailSent = true;
@@ -53,4 +43,5 @@ export class ForgotPassPageComponent {
       }
     );
   }
+}
 }

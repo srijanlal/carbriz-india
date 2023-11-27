@@ -25,9 +25,9 @@ export class ResetPasswordComponent {
         return;
       }
     
-      console.log('RESET BUTTON CLICKED');
-      console.log('User Credential:', this.customerData.userCredential);
-      console.log('Password:', this.password1);
+      // console.log('RESET BUTTON CLICKED');
+      // console.log('User Credential:', this.customerData.userCredential);
+      // console.log('Password:', this.password1);
     
       this.resetPasswordService.resetPassword(this.customerData.userCredential, this.password1).subscribe(
         (response) => {

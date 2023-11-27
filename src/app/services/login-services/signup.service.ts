@@ -13,12 +13,13 @@ interface SignupResponse{
 
 export class SignupService {
 
-  constructor(private http : HttpClient, private baseUrl : BaseUrlService) { }
+  private apiUrl = this.baseUrl.url; // Replace with your Node.js server API URL
 
-  private signupUrl = this.baseUrl.url;
+  constructor(private http: HttpClient, private baseUrl : BaseUrlService) {}
 
-  signup(username: string, email: string, password: string, mobile:number, state:string):Observable<SignupResponse>{
-    return this.http.post<SignupResponse>(`${this.signupUrl}/signup`,{username, email, password, mobile, state});
+
+  signup(name: string, username: string, email: string, password: string, mobile:number, state:string):Observable<SignupResponse>{
+    return this.http.post<SignupResponse>(`${this.apiUrl}/signup`,{name, username, email, password, mobile, state});
   }
 
 

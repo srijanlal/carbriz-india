@@ -13,7 +13,13 @@
     margin: 0;
     font-size: 50px;
     color: rgba(225, 225, 225, 0.01);
-    background-image: url("https://images.unsplash.com/photo-1499195333224-3ce974eecb47?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2cf549433129d4227d1879347b9e78ce&auto=format&fit=crop&w=1248&q=80");
+    /* background-image: url("https://images.unsplash.com/photo-1499195333224-3ce974eecb47?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2cf549433129d4227d1879347b9e78ce&auto=format&fit=crop&w=1248&q=80"); */
+    /* background-image: url(../../../../assets/images/background-image/pexels-darya-sannikova-4483343.jpg); */
+    /* background-image: url('https://images.pexels.com/photos/10992756/pexels-photo-10992756.jpeg?auto=compress&cs=tinysrgb&w=1600'); */
+    /* background-image: url('https://images.pexels.com/photos/1704120/pexels-photo-1704120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); */
+    /* background-image: url('https://images.pexels.com/photos/4021521/pexels-photo-4021521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); */
+    background-image: url('https://images.pexels.com/photos/1428169/pexels-photo-1428169.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+
     background-repeat: repeat;
     -webkit-background-clip: text;
     animation: animate 15s ease-in-out infinite;

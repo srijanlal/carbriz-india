@@ -30,7 +30,7 @@ export class VerifyCodeComponent {
       console.log("Verify Code Clicked!")
       this.verificationCodeService.verifyCode (this.customerData.userCredential , this.code).subscribe(
         (response)=>{
-          console.log(response)
+          // console.log(response)
         if(response.isCodeValid){
           this.router.navigate(['./reset-password'])
           console.log('Verification Successfull !!!')

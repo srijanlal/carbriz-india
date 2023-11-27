@@ -9,13 +9,13 @@ import { BaseUrlService } from '../data-services/base-url.service';
   providedIn: 'root'
 })
 export class ForgotPasswordService {
-  private forgotPasswordUrl = this.baseUrl.url;
+  private apiUrl = this.baseUrl.url; // Replace with your Node.js server API URL
 
   constructor(private http: HttpClient , private baseUrl : BaseUrlService) {}
 
   sendVerificationCode( userCredential:string): Observable<any> {
-    console.log(userCredential)
-    console.log("req sent from service file")
-    return this.http.post<any>(`${this.forgotPasswordUrl}/forgot-password`, {userCredential});
+    // console.log(userCredential)
+    // console.log("req sent from service file")
+    return this.http.post<any>(`${this.apiUrl}/forgot-password`, {userCredential});
   }
 }

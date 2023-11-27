@@ -2,3 +2,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.product-detail-image-card-container{
+    max-height: 450px;
+    min-height: 450px;
+    max-width: 400px;
+}
+
+.product-detail-image{
+    max-height: 350px;
+    min-height: 350px;
+}

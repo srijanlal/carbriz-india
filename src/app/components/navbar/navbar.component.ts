@@ -3,18 +3,17 @@ import { Component, HostListener } from '@angular/core';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styles:[`
-    //navbar styles 
-    .navbarUser{
-      display: none !Important;
-    }
-  `]
+  styleUrls:['./navbar.component.css']
 })
 export class NavbarComponent {
   isNavbarOpened : boolean= false;
   hideNavbar: string ='items-center justify-between hidden w-full md:flex md:w-auto md:order-1'
   showNavbar: string ='items-center justify-between w-full md:flex md:w-auto md:order-1'
   screenWidth: number;
+
+  customer : any={
+    imageUrl: '../../../assets/images/srijan.jpg'
+  }
 
   constructor() {
     // Initialize the screenWidth property
@@ -23,6 +22,7 @@ export class NavbarComponent {
       this.isNavbarOpened= true;
     }
   }
+
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event): void {

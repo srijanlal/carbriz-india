@@ -231,7 +231,7 @@
             <!-- cart-button -->
             <button routerLink="/cart" type="button" data-dropdown-toggle="apps-dropdown"
             class="p-2 w- text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600">
-            <span class="sr-only">View notifications</span>
+            <span class="sr-only">Cart</span>
             <!-- Icon -->
             <svg class="w-6 h-6 text-gray-500 hover:text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
                 <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
@@ -379,15 +379,16 @@
             
 
                 <button type="button"
+                routerLink="/user-dashboard"
                 class="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                 id="user-menu-button" aria-expanded="false" data-dropdown-toggle="dropdown">
                 <span class="sr-only">Open user menu</span>
                 <img class="w-8 h-8 rounded-full"
-                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gough.png"
+                        [src]="user_image"
                         alt="user photo" />
                     </button>
                 <!-- Dropdown menu -->
-                <div class="hidden z-50 my-4 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 rounded-xl"
+                <!-- <div class="hidden z-50 my-4 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 rounded-xl"
                     id="dropdown">
                     <div class="py-3 px-4">
                         <span class="block text-sm font-semibold text-gray-900 dark:text-white">Neil Sims</span>
@@ -456,7 +457,7 @@
                             out</a>
                         </li>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </div>
         
@@ -485,7 +486,7 @@
                 </div>
             </form>
             <ul class="space-y-2">
-                <li>
+                <!-- <li>
                     <a routerLink="/instagram-post"
                         class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         <svg aria-hidden="true"
@@ -496,7 +497,7 @@
                         </svg>
                         <span class="ml-3">Overview</span>
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <button type="button"
                         class="flex items-center p-2 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
@@ -520,57 +521,57 @@
                         <li>
                             <button type="button" class="text-gray-900 border border-white 
                             w-full
-                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="getAllProducts()">All Products</button>
+                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="loadAllProducts()">All Products</button>
                         </li>
                         <li>
                             <button type="button" class="text-gray-900 border border-white 
                             w-full
-                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="getProductsByCategory('coatings')">Coatings</button>
+                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="loadProductsByCategory('coatings')">Coatings</button>
                         </li>
                         <li>
                             <button type="button" class="text-gray-900 border border-white 
                             w-full
-                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="getProductsByCategory('coating accessories')">Coating Accessories</button>
+                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="loadProductsByCategory('coating accessories')">Coating Accessories</button>
                         </li>
                         <li>
                             <button type="button" class="text-gray-900 border border-white 
                             w-full
-                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="getProductsByCategory('compounds')">Compounds</button>
+                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="loadProductsByCategory('compounds')">Compounds</button>
                         </li>
                         <li>
                             <button type="button" class="text-gray-900 border border-white 
                             w-full
-                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="getProductsByCategory('cleaners')">Cleaners</button>
+                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="loadProductsByCategory('cleaners')">Cleaners</button>
                         </li>
                         <li>
                             <button type="button" class="text-gray-900 border border-white 
                             w-full
-                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="getProductsByCategory('polisher')">Polisher</button>
+                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="loadProductsByCategory('polisher')">Polisher</button>
                         </li>
                         <li>
                             <button type="button" class="text-gray-900 border border-white 
                             w-full
-                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="getProductsByCategory('backing plate')">Backing Plate</button>
+                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="loadProductsByCategory('backing plate')">Backing Plate</button>
                         </li>
                         <li>
                             <button type="button" class="text-gray-900 border border-white 
                             w-full
-                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="getProductsByCategory('pads')">Pads</button>
+                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="loadProductsByCategory('pads')">Pads</button>
                         </li>
                         <li>
                             <button type="button" class="text-gray-900 border border-white 
                             w-full
-                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="getProductsByCategory('microfibers')">MicroFibers</button>
+                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="loadProductsByCategory('microfibers')">MicroFibers</button>
                         </li>
                         <li>
                             <button type="button" class="text-gray-900 border border-white 
                             w-full
-                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="getProductsByCategory('brushes')">Brushes</button>
+                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="loadProductsByCategory('brushes')">Brushes</button>
                         </li>
                         <li>
                             <button type="button" class="text-gray-900 border border-white 
                             w-full
-                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="getProductsByCategory('accessories')">Accessories</button>
+                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="loadProductsByCategory('accessories')">Accessories</button>
                         </li>
                         
                         <!-- <li>
@@ -602,32 +603,32 @@
                         <li>
                             <button type="button" class="text-gray-900 border border-white 
                             w-full
-                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="getProductsByCategory('cleaners')">Deal of the Day</button>
+                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="loadProductsByCategory('cleaners')">Deal of the Day</button>
                         </li>
                         <li>
                             <button type="button" class="text-gray-900 border border-white 
                             w-full
-                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="getProductsByCategory('accessories')">Accessories</button>
+                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="loadProductsByCategory('accessories')">Accessories</button>
                         </li>
                         <li>
                             <button type="button" class="text-gray-900 border border-white 
                             w-full
-                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="getProductsByCategory('accessories')">Accessories</button>
+                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="loadProductsByCategory('accessories')">Accessories</button>
                         </li>
                         <li>
                             <button type="button" class="text-gray-900 border border-white 
                             w-full
-                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="getProductsByCategory('accessories')">Accessories</button>
+                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="loadProductsByCategory('accessories')">Accessories</button>
                         </li>
                         <li>
                             <button type="button" class="text-gray-900 border border-white 
                             w-full
-                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="getProductsByCategory('accessories')">Accessories</button>
+                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="loadProductsByCategory('accessories')">Accessories</button>
                         </li>
                         <li>
                             <button type="button" class="text-gray-900 border border-white 
                             w-full
-                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="getProductsByCategory('accessories')">Accessories</button>
+                            dark:bg-gray-900 bg-white focus:ring-4 focus:outline-none hover:bg-gray-100 focus:ring-gray-300  text-base font-medium px-5 py-2.5 text-center   dark:text-white dark:focus:ring-gray-800" (click)="loadProductsByCategory('accessories')">Accessories</button>
                         </li>
                         <!-- <li>
                             <a routerLink="/"
@@ -635,7 +636,7 @@
                         </li> -->
                     </ul>
                 </li>
-                <li>
+                <!-- <li>
                     <a routerLink="/"
                         class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         <svg aria-hidden="true"
@@ -654,8 +655,8 @@
                             4
                         </span>
                     </a>
-                </li>
-                <li>
+                </li> -->
+                <!-- <li>
                     <button type="button"
                         class="flex items-center p-2 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                         aria-controls="dropdown-authentication" data-collapse-toggle="dropdown-authentication">
@@ -676,26 +677,26 @@
                     </button>
                     <ul id="dropdown-authentication" class="hidden py-2 space-y-2">
                         <li>
-                            <a routerLink="/"
+                            <a routerLink="/login"
                                 class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Sign
                                 In</a>
                         </li>
                         <li>
-                            <a routerLink="/"
+                            <a routerLink="/signup"
                                 class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Sign
                                 Up</a>
                         </li>
                         <li>
-                            <a routerLink="/"
+                            <a routerLink="/forgot-password"
                                 class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Forgot
                                 Password</a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
             </ul>
             <ul class="pt-5 mt-5 space-y-2 border-t border-gray-200 dark:border-gray-700">
                 <li>
-                    <a routerLink="/"
+                    <a href="../../../assets/docs/carbriz_catalog.pdf"  target="_blank"
                         class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group">
                         <svg aria-hidden="true"
                             class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -708,7 +709,7 @@
                         <span class="ml-3">Docs</span>
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a routerLink="/"
                         class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group">
                         <svg aria-hidden="true"
@@ -720,7 +721,7 @@
                         </svg>
                         <span class="ml-3">Components</span>
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <a routerLink="/"
                         class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group">
@@ -906,8 +907,8 @@
         
             <ng-template #dataContent>
                 <!-- Display your actual data here -->
-                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mx-10  product-gallery">
-                    <div *ngFor="let product of products" class="col-span-1">
+                <div class="flex flex-wrap mx-10  product-gallery">
+                    <div *ngFor="let product of products" class="product-gallery-item"> 
                         <app-product-card [product]="product"></app-product-card>
                     </div>
                 </div>

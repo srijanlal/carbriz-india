@@ -16,6 +16,11 @@ import { SignupPageComponent } from './components/authentication/signup-page/sig
 import { VerifyCodeComponent } from './components/authentication/verify-code/verify-code.component';
 import { ForgotPassPageComponent } from './components/authentication/forgot-pass-page/forgot-pass-page.component';
 import { ResetPasswordComponent } from './components/authentication/reset-password/reset-password.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { UserDashboardComponent } from './components/dashboard/user-dashboard/user-dashboard.component';
+import { AdminDashboardComponent } from './components/dashboard/admin-dashboard/admin-dashboard.component';
+import { PhotoGalleryComponent } from './components/photo-gallery/photo-gallery.component';
 
 const routes: Routes = [
   { path : '', component: HomeComponent},
@@ -35,6 +40,21 @@ const routes: Routes = [
   { path : 'verify-code', component : VerifyCodeComponent},
   { path : 'forgot-password', component : ForgotPassPageComponent},
   { path : 'reset-password', component : ResetPasswordComponent},
+  { path : 'product-detail', component : ProductDetailComponent},
+  { path : 'checkout', component : CheckoutComponent},
+  { path : 'user-dashboard', component : UserDashboardComponent},
+  { path : 'admin-dashboard', component : AdminDashboardComponent},
+  { path : 'photo-gallery', component : PhotoGalleryComponent},
+  { path : 'cart', component : CartComponent},
+  { path : 'cart', component : CartComponent},
+  { path : 'cart', component : CartComponent},
+  { path : 'cart', component : CartComponent},
+  { path : 'cart', component : CartComponent},
+  { path : 'cart', component : CartComponent},
+  { path : 'cart', component : CartComponent},
+  { path : 'cart', component : CartComponent},
+  { path : 'cart', component : CartComponent},
+  { path : 'cart', component : CartComponent},
 
   
 ];

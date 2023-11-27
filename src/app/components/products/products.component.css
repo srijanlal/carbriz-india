@@ -1,0 +1,9 @@
+.product-gallery{
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.product-gallery-item{
+    margin: 10px;
+}
+

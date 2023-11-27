@@ -7,6 +7,6 @@ export class BaseUrlService {
 
   constructor() { }
 
-  url : string =  'http://localhost:3000';
+  url : string =  'https://rest.carbriz.com';
 
 }

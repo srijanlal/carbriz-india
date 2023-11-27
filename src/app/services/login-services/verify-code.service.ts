@@ -8,15 +8,15 @@ import { BaseUrlService } from '../data-services/base-url.service';
 })
 export class VerifyCodeService {
 
-  constructor(private http: HttpClient, private baseUrl : BaseUrlService) { }
 
+  private apiUrl = this.baseUrl.url; // Replace with your Node.js server API URL
 
-  private verifyCodeUrl = this.baseUrl.url;
+  constructor(private http: HttpClient, private baseUrl : BaseUrlService) {}
 
 
 
 
   verifyCode(userCredential:string, code:string):Observable<{isCodeValid: boolean}>{
-    return this.http.post<{isCodeValid:boolean}>(`${this.verifyCodeUrl}/verify-code`, {userCredential, code});
+    return this.http.post<{isCodeValid:boolean}>(`${this.apiUrl}/verify-code`, {userCredential, code});
   }
 }

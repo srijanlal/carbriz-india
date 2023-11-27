@@ -10,7 +10,7 @@ import { SignupService } from 'src/app/services/login-services/signup.service';
   styleUrls: ['./signup-page.component.scss']
 })
 export class SignupPageComponent implements OnInit{
-
+  name !:string
   username!:string
   email!:string
   password!:string
@@ -18,11 +18,13 @@ export class SignupPageComponent implements OnInit{
   state!:string
   form: Form | undefined
 
+  states = ['Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal'];
+
   constructor(private router: Router, private http: HttpClient, private signupService : SignupService) {}
 
   signUp(form: { resetForm: () => void; }): void {
     
-    this.signupService.signup(this.username, this.email, this.password, this.mobile, this.state)
+    this.signupService.signup(this.name, this.username, this.email, this.password, this.mobile, this.state)
       .subscribe(response => {
         console.log(response);
         this.router.navigate(['/products'])

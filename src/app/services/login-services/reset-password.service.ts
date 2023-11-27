@@ -13,11 +13,11 @@ interface ResetPasswordResponse {
   providedIn: 'root',
 })
 export class ResetPasswordService {
-  private resetPasswordUrl = this.baseUrl.url
+  private apiUrl = this.baseUrl.url; // Replace with your Node.js server API URL
 
   constructor(private http: HttpClient, private baseUrl : BaseUrlService) {}
 
   resetPassword(userCredential: string, password: string): Observable<ResetPasswordResponse> {
-    return this.http.post<ResetPasswordResponse>(`${this.resetPasswordUrl}/reset-password`, { userCredential, password });
+    return this.http.post<ResetPasswordResponse>(`${this.apiUrl}/reset-password`, { userCredential, password });
   }
 }

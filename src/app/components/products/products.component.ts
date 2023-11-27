@@ -1,33 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { initFlowbite } from 'flowbite';
-import { ProductsService } from 'src/app/services/product-services/products.service';
+import { Customer } from 'src/app/models/customer.model';
+import { ProductService } from 'src/app/services/product-services/products.service';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
-
-
-
-export class ProductsComponent {
-  products: any[] = [];
+export class ProductsComponent implements OnInit {
+  products: any
   isLoading: boolean = true;
+  user_image : string = '../../../assets/images/srijan.jpg'
 
-  dummyProducts: any[]=[1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-  constructor(
-    
-    private productService: ProductsService
-  ) {}
+  constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
-    initFlowbite()
+    initFlowbite();
+    this.loadAllProducts();
+  }
+
+  loadAllProducts() {
+    this.isLoading = true;
     this.productService.getAllProducts().subscribe(
       (data) => {
         this.products = data;
         this.isLoading = false;
-        console.log(this.products);
       },
       (error) => {
         console.log('Error fetching products: ', error);
@@ -35,64 +33,15 @@ export class ProductsComponent {
     );
   }
 
-  getAllProducts(){
-    this.productService.getAllProducts().subscribe(
-      (data) => {
-        this.products = data;
-        this.isLoading = false;
-        console.log(this.products);
-      },
-      (error) => {
-        console.log('Error fetching products: ', error);
-      }
-    );
-  }
-
-  getProductsByCategory(category: any) {
+  loadProductsByCategory(category: any) {
+    // this.isLoading = true;
     this.productService.getProductsByCategory(category).subscribe(
       (data) => {
         this.products = data;
-        console.log(JSON.stringify(data));
       },
       (error) => {
         console.log('Error getting products by Category : ', error);
       }
     );
   }
-
-
-
-  // this.productService.getAllProducts().subscribe(
-  //   (data) => {
-  //     this.products = data;
-  //     this.isLoading = false;
-  //     console.log(this.products);
-  //   },
-  //   (error) => {
-  //     console.log('Error fetching products: ', error);
-  //   }
-  // );
-  // getAllCategories() {
-  //   this.productService.getAllProducts().subscribe(
-  //     (data) => {
-  //       this.products = data;
-  //       console.log(this.products);
-  //     },
-  //     (error) => {
-  //       console.log('Error fetching products: ', error);
-  //     }
-  //   );
-  // }
-
-  // getProductsByCategory(category: any) {
-  //   this.productService.getProductsByCategory(category).subscribe(
-  //     (data) => {
-  //       this.products = data;
-  //       console.log(data);
-  //     },
-  //     (error) => {
-  //       console.log('Error getting products by Category : ', error);
-  //     }
-  //   );
-  // }
 }

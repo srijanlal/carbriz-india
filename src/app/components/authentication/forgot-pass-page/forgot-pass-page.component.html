@@ -7,7 +7,8 @@
       <p class="mb-6 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">Here at Flowbite we focus on
         markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
       <a href="https://www.instagram.com/carbrizcarcare/" target="_blank"
-        class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">Check our Instagram posts
+        class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">Check our
+        Instagram posts
         <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
           viewBox="0 0 14 10">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -21,31 +22,27 @@
           Forgot Password
         </h2>
         <form class="mt-8 space-y-6" (ngSubmit)="sendVerificationCode()">
-           <div>
+          <div>
             <div>
-              <label for="email" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
-              <input type="email" name="email" id="email" [(ngModel)]="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" required>
+              <label for="username"
+                class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Username / Email</label>
+              <input type="text" name="username" id="username" [(ngModel)]="userCredential"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Your username" required>
+            </div>
           </div>
-          <div class="flex items-center justify-center" style="margin-bottom: -20px;">
-              <span class="text-gray-500 dark:text-gray-400">Or</span>
-          </div>              
-          <div>
-              <label for="username" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Username</label>
-              <input type="text" name="username" id="username" [(ngModel)]="username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your username" required>
-          </div>
-           </div>
-        
-            <!--  email section ends here --------------------- -->
-            <!-- email validation section starts here  -->
-              <p   *ngIf="isMailSent" class="text-sm text-green-600 dark:text-green-500">{{mailSentMsg}}</p>
-                <!-- Content to show when condition is false -->
-                <p *ngIf="!isMailSent" class="mt-2 text-sm text-red-600 dark:text-red-500">{{mailNotSentMsg}}</p>
+
+          <!--  email section ends here --------------------- -->
+          <!-- email validation section starts here  -->
+          <p *ngIf="isMailSent" class="text-sm text-green-600 dark:text-green-500">{{mailSentMsg}}</p>
+          <!-- Content to show when condition is false -->
+          <p *ngIf="!isMailSent" class="mt-2 text-sm text-red-600 dark:text-red-500">{{mailNotSentMsg}}</p>
 
 
-  <!-- email validation section ends here -->
-          <div>
+          <!-- email validation section ends here -->
+          <div class="inline-flex items-center justify-center w-full" >
             <button type="submit"
-            class="w-full px-5 py-3 text-base font-medium text-center text-white bg-green-400 rounded-lg hover:bg-green-600 focus:ring-4 focus:ring-green-300 sm:w-auto dark:bg-green-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+              class=" px-10 py-3 text-base font-medium text-center text-white bg-green-400 rounded-lg hover:bg-green-600 focus:ring-4 focus:ring-green-300 sm:w-auto dark:bg-green-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
           </div>
           <div class="text-sm font-medium text-gray-900 dark:text-white">
             Not registered yet? <a class="text-blue-600 hover:underline dark:text-blue-500" routerLink="/signup">Create

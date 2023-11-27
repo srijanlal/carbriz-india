@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent {
+  product: any={
+    title:'Coating',
+    desc: '',
+    image:'../../../../../../assets/images/5.png'
+  }
 
 }
